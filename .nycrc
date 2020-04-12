@@ -1,0 +1,14 @@
+{
+  "reporter": [
+    "html",
+    "text",
+    "text-summary",
+    "lcov"
+  ],
+  "include": [
+    "lib/**/*.js",
+    "cli.js"
+  ],
+  "check-coverage": false,
+  "cache": false
+}

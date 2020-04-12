@@ -1,0 +1,40 @@
+{
+  "name": "sprnz",
+  "version": "0.1.0",
+  "description": "An assortment of promise-based utilities",
+  "main": "index.js",
+  "scripts": {
+    "lint-watch": "esw --color -w --clear",
+    "test-watch": "_mocha --watch './{,!(node_modules)/**}/*.test.js'",
+    "test": "nyc _mocha --exit './{,!(node_modules)/**}/*.test.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/asartalo/sprnz.git"
+  },
+  "keywords": [
+    "promise",
+    "utilities",
+    "helpers"
+  ],
+  "author": "Wayne Duran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asartalo/sprnz/issues"
+  },
+  "homepage": "https://github.com/asartalo/sprnz#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/dirty-chai": "^2.0.2",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "dirty-chai": "^2.0.1",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-mocha": "^6.2.2",
+    "eslint-watch": "^6.0.1",
+    "mocha": "^7.1.1",
+    "nyc": "^14.1.1"
+  }
+}
