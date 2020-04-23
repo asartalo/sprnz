@@ -6,7 +6,7 @@ const { expect } = chai;
 // const { expect } = require('chai');
 // const wait = require('../wait.js');
 
-describe('wait()', () => {
+describe('@sprnz/wait', () => {
   describe('when called with the number of miliseconds', () => {
     let resolved;
     beforeEach(() => {

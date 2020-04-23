@@ -7,11 +7,14 @@
     "setTimeout",
     "promise"
   ],
-  "type": "module",
   "author": "Wayne Duran <asartalo@gmail.com>",
   "homepage": "https://github.com/asartalo/sprnz/tree/master/packages/wait#readme",
   "license": "ISC",
-  "main": "lib/wait.js",
+  "main": "cjs/wait.js",
+  "exports": {
+    "import": "es/wait.js",
+    "require": "cjs/wait.js"
+  },
   "directories": {
     "lib": "lib",
     "test": "__tests__"

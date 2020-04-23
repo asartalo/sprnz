@@ -6,6 +6,8 @@
   "scripts": {
     "lint-watch": "esw --color -w --clear",
     "ls": "lerna-script",
+    "create-package": "node ./scripts/createPackage.js",
+    "lint": "eslint --fix ./packages/ ./scripts/ ./support/ ./*.js",
     "test-watch": "node ./scripts/testWatch.js",
     "test": "cross-env BABEL_ENV=cjs mocha --exit --require @babel/register './packages/**/__tests__/*.test.js'"
   },
@@ -33,6 +35,7 @@
     "@types/chai": "^4.2.11",
     "@types/dirty-chai": "^2.0.2",
     "babel-plugin-annotate-pure-calls": "^0.4.0",
+    "babel-plugin-transform-commonjs-es2015-modules": "^4.0.1",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "chokidar": "^3.3.1",

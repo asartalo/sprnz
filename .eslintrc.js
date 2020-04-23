@@ -1,33 +1,40 @@
 module.exports = {
   env: {
     browser: false,
-    es6: true
+    es6: true,
   },
-  extends: ["airbnb-base", "plugin:mocha/recommended"],
+  extends: ['airbnb-base', 'plugin:mocha/recommended'],
   globals: {
-    Atomics: "readonly",
-    SharedArrayBuffer: "readonly"
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
   },
   parserOptions: {
-    ecmaVersion: 2018
+    ecmaVersion: 2018,
   },
   rules: {
-    "mocha/no-mocha-arrows": "off",
-    "no-underscore-dangle": "off",
-    "arrow-parens": ["error", "as-needed"],
-    "no-plusplus": ["error", { allowForLoopAfterthoughts: true }]
+    'mocha/no-mocha-arrows': 'off',
+    'no-underscore-dangle': 'off',
+    'arrow-parens': ['error', 'as-needed'],
+    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
   },
   overrides: [
     {
-      files: ["**/*.test.js"],
+      files: ['**/*.test.js'],
       env: {
-        mocha: true // now **/*.test.js files' env has both es6 *and* jest
+        mocha: true,
       },
-      plugins: ["mocha"],
+      plugins: ['mocha'],
       rules: {
-        "mocha/no-hooks-for-single-case": "off",
-        "func-names": "off"
-      }
-    }
-  ]
+        'mocha/no-hooks-for-single-case': 'off',
+        'func-names': 'off',
+      },
+    },
+    {
+      files: ['scripts/*.js', 'support/*.js', './*.js'],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+        'no-console': 'off',
+      },
+    },
+  ],
 };

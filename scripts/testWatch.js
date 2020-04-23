@@ -11,11 +11,9 @@ function runTests() {
     process.stdout.write('\nRunning tests...');
     const cmd = spawn('npm', ['run', 'test'], { stdio: 'inherit' });
     cmd.on('close', code => {
-      console.log(`Test exited with ${code}`);
+      process.stdout.write(`Test exited with ${code}`);
     });
   }, 70);
 }
 
-chokidar.watch('./packages/**/*.js').on('all', (event, path) => {
-  runTests();
-});
+chokidar.watch('./packages/**/*.js').on('all', runTests);

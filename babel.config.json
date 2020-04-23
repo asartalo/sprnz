@@ -4,7 +4,7 @@
       "plugins": ["annotate-pure-calls", "@babel/plugin-transform-modules-commonjs"]
     },
     "es": {
-      "plugins": ["annotate-pure-calls"]
+      "plugins": ["annotate-pure-calls", "transform-commonjs-es2015-modules"]
     }
   }
 }
