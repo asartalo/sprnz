@@ -1,0 +1,4 @@
+{
+  "file": ["./support/mocha-setup.js"],
+  "watch-files": ["./packages/**/*.js"]
+}

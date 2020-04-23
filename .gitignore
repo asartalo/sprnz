@@ -38,6 +38,10 @@ node_modules/
 # next.js build output
 .next
 
+# Publish directories
+/packages/*/cjs
+/packages/*/es
+
 # others
 .DS_Store
 

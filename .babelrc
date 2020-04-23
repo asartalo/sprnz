@@ -1,0 +1,10 @@
+{
+  "env": {
+    "cjs": {
+      "plugins": ["annotate-pure-calls", "@babel/plugin-transform-modules-commonjs"]
+    },
+    "es": {
+      "plugins": ["annotate-pure-calls"]
+    }
+  }
+}
