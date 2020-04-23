@@ -30,4 +30,4 @@ For example, running the following:
 npm run create-package my-library
 ```
 
-...will create the library named `@sprnz/wait` library under `./packages`
+...will create the library named `@sprnz/my-library` library under `./packages`
