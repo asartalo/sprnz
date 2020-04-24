@@ -38,6 +38,6 @@ npm run create-package my-library
 
 ```sh
 npm run ls buildDist
-lerna version <major|minor|patch>
+lerna version --conventional-commits <major|minor|patch>
 lerna publish
 ```

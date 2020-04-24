@@ -28,7 +28,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run test-no-coverage",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run test-no-coverage",
       "pre-push": "npm run lint && npm run test-no-coverage"
     }
   },
@@ -39,6 +40,8 @@
     "@babel/plugin-transform-modules-commonjs": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "@babel/register": "^7.9.0",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@types/chai": "^4.2.11",
     "@types/dirty-chai": "^2.0.2",
     "babel-plugin-annotate-pure-calls": "^0.4.0",
