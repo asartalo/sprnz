@@ -26,6 +26,12 @@
   "bugs": {
     "url": "https://github.com/asartalo/sprnz/issues"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test-no-coverage",
+      "pre-push": "npm run lint && npm run test-no-coverage"
+    }
+  },
   "homepage": "https://github.com/asartalo/sprnz#readme",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -50,6 +56,7 @@
     "eslint-plugin-jsdoc": "^24.0.0",
     "eslint-plugin-mocha": "^6.2.2",
     "eslint-watch": "^6.0.1",
+    "husky": "^4.2.5",
     "lerna": "^3.20.2",
     "lerna-script": "^1.1.1",
     "mocha": "^7.1.1"
