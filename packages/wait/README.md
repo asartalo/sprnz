@@ -1,11 +1,14 @@
 # `@sprnz/wait`
 
-> TODO: description
+Wait a specified number of seconds before resolving.
 
 ## Usage
 
-```
-const wait = require('@sprnz/wait');
+```javascript
+import wait from '@sprnz/wait';
 
-// TODO: DEMONSTRATE API
+(async function() {
+  const ms = await wait(500); // will resolve after 500 milliseconds
+  console.log(ms); // 500
+})();
 ```
