@@ -29,7 +29,9 @@ describe('@sprnz/wait', () => {
 
   describe('when called with a default value', () => {
     let resolved;
-    beforeEach(async () => (resolved = await wait(10, 'Hello')));
+    beforeEach(async () => {
+      resolved = await wait(10, 'Hello');
+    });
 
     it('resolves with default value', () => {
       expect(resolved).to.equal('Hello');
