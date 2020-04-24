@@ -1,7 +1,7 @@
 const { loadPackages, iter } = require('lerna-script');
 const editJsonFile = require('edit-json-file');
 const { join } = require('path');
-const runCommand = require('../runCommand');
+const runCommand = require('../lib/runCommand');
 const scopeLog = require('./lib/scopeLog');
 
 function babelCommand({

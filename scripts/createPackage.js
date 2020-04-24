@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { join } = require('path');
-const runCommand = require('./runCommand.js');
+const runCommand = require('./lib/runCommand.js');
 
 const scriptName = Array.from(process.argv).pop();
 const packageName = `@sprnz/${scriptName}`;

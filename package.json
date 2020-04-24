@@ -8,6 +8,7 @@
     "ls": "lerna-script",
     "create-package": "node ./scripts/createPackage.js",
     "lint": "eslint --fix ./packages/ ./scripts/ ./support/ ./*.js",
+    "publish": "node ./scripts/publish.js",
     "test-watch": "node ./scripts/testWatch.js",
     "test-no-coverage": "cross-env BABEL_ENV=cjs mocha --exit './packages/**/__tests__/*.test.js'",
     "test": "cross-env NODE_ENV=test BABEL_ENV=cjs c8 mocha --exit './packages/**/__tests__/*.test.js'"
