@@ -1,22 +1,11 @@
-const { spawn } = require('child_process');
 const fs = require('fs');
 const { join } = require('path');
-
-function runCommand(command, ...args) {
-  let options = { stdio: 'inherit' };
-  if (args.length > 0 && typeof args[args.length - 1] === 'object') {
-    options = { ...options, ...args.pop() };
-  }
-  return new Promise(resolve => {
-    const cmd = spawn(command, args, options);
-    cmd.on('close', resolve);
-  });
-}
+const runCommand = require('./runCommand.js');
 
 const scriptName = Array.from(process.argv).pop();
 const packageName = `@sprnz/${scriptName}`;
 
-(async function () {
+(async () => {
   console.log(`Creating package ${packageName}`);
   let result = await runCommand('lerna', 'create', packageName);
   if (result !== 0) {
@@ -51,4 +40,4 @@ const packageName = `@sprnz/${scriptName}`;
   );
 
   await runCommand('eslint', '--fix', `./packages/${scriptName}/**/*.js`, { stdio: 'ignore' });
-}());
+})();
