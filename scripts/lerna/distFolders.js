@@ -1,6 +1,6 @@
 const { loadPackages, iter, exec } = require('lerna-script');
 const { join } = require('path');
-const scopeLog = require('./scopeLog');
+const scopeLog = require('./lib/scopeLog');
 
 const distDirs = ['es', 'cjs'];
 

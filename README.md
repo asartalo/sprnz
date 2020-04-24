@@ -33,3 +33,11 @@ npm run create-package my-library
 ```
 
 ...will create the library named `@sprnz/my-library` library under `./packages`
+
+## Publishing
+
+```sh
+npm run ls buildDist
+lerna version <major|minor|patch>
+lerna publish
+```

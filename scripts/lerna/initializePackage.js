@@ -1,6 +1,6 @@
 const { loadPackages, loadRootPackage } = require('lerna-script');
 const editJsonFile = require('edit-json-file');
-const scopeLog = require('./scopeLog');
+const scopeLog = require('./lib/scopeLog');
 
 function all(...items) {
   return Promise.all(items);
@@ -56,10 +56,15 @@ async function initializePackage(log) {
   const scriptFile = `${mainName}.js`;
   const items = {
     type: 'module',
-    main: `cjs/${scriptFile}`,
+    main: `./cjs/${scriptFile}`,
+    files: ['es', 'cjs'],
+    directories: {
+      lib: 'es',
+      test: '__tests__',
+    },
     exports: {
-      import: `es/${scriptFile}`,
-      require: `cjs/${scriptFile}`,
+      require: `./cjs/${scriptFile}`,
+      default: `./es/${scriptFile}`,
     },
   };
 

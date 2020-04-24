@@ -1,7 +1,8 @@
 const { loadPackages, iter } = require('lerna-script');
+const editJsonFile = require('edit-json-file');
 const { join } = require('path');
 const runCommand = require('../runCommand');
-const scopeLog = require('./scopeLog');
+const scopeLog = require('./lib/scopeLog');
 
 function babelCommand({
   env, src, dest, config,
@@ -43,6 +44,11 @@ async function buildDist(log) {
     } catch (e) {
       error(e);
     }
+
+    // Add package.json to cjs directory
+    const cjsPackageJson = editJsonFile(join(cjsPath, 'package.json'));
+    cjsPackageJson.set('type', 'commonjs');
+    cjsPackageJson.save();
   });
 }
 
