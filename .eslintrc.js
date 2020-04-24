@@ -35,6 +35,9 @@ module.exports = {
       files: ['packages/*/lib/**/*.js'],
       plugins: ['jsdoc'],
       extends: ['plugin:jsdoc/recommended'],
+      rules: {
+        'jsdoc/require-description': 1,
+      },
     },
     {
       files: ['scripts/**/*.js', 'support/*.js', './*.js'],
