@@ -1,5 +1,7 @@
 # sprnz
 
+[![CircleCI](https://circleci.com/gh/asartalo/sprnz.svg?style=svg)](https://circleci.com/gh/asartalo/sprnz)
+
 A collection of tools that use promises
 
 The name is from “esperanza” which is a Spanish word for “hope”.
