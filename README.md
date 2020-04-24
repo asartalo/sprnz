@@ -40,8 +40,8 @@ npm run create-package my-library
 
 ```sh
 npm run ls buildDist
-lerna version --conventional-commits -m "chore(release): publish %s"
-lerna publish
+lerna version --conventional-commits -m "chore(release): publish"
+lerna publish from-git
 ```
 
 If the initial publish fails run:
