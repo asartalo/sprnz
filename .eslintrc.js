@@ -30,7 +30,7 @@ module.exports = {
       },
     },
     {
-      files: ['scripts/*.js', 'support/*.js', './*.js'],
+      files: ['scripts/**/*.js', 'support/*.js', './*.js'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
         'no-console': 'off',
