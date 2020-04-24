@@ -8,6 +8,8 @@ The name is from “esperanza” which is a Spanish word for “hope”.
 
 ## Development
 
+This project follows the [conventional commits spec](https://www.conventionalcommits.org/en/v1.0.0/).
+
 ### Run tests in watch mode:
 
 ```sh
@@ -38,6 +40,12 @@ npm run create-package my-library
 
 ```sh
 npm run ls buildDist
-lerna version --conventional-commits <major|minor|patch>
+lerna version --conventional-commits -m "chore(release): publish %s"
 lerna publish
+```
+
+If the initial publish fails run:
+
+```sh
+lerna publish from-package
 ```
