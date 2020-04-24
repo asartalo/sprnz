@@ -1,6 +1,6 @@
 {
   "name": "@sprnz/wait",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "description": "A promise wrapper for setTimeout with defaults",
   "keywords": [
