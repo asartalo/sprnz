@@ -12,6 +12,7 @@ module.exports = {
     ecmaVersion: 2018,
   },
   rules: {
+    'import/extensions': ['error', { js: 'ignorePackages' }],
     'mocha/no-mocha-arrows': 'off',
     'no-underscore-dangle': 'off',
     'arrow-parens': ['error', 'as-needed'],
@@ -25,15 +26,27 @@ module.exports = {
       },
       plugins: ['mocha'],
       rules: {
+        'import/no-extraneous-dependencies': 'off',
         'mocha/no-hooks-for-single-case': 'off',
         'func-names': 'off',
       },
+    },
+    {
+      files: ['packages/*/lib/**/*.js'],
+      plugins: ['jsdoc'],
+      extends: ['plugin:jsdoc/recommended'],
     },
     {
       files: ['scripts/**/*.js', 'support/*.js', './*.js'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
         'no-console': 'off',
+      },
+    },
+    {
+      files: ['packages/*/cjs/**/*.js'],
+      rules: {
+        'no-void': 'off',
       },
     },
   ],

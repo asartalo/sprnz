@@ -3,9 +3,6 @@ import wait from '../lib/wait.js';
 
 const { expect } = chai;
 
-// const { expect } = require('chai');
-// const wait = require('../wait.js');
-
 describe('@sprnz/wait', () => {
   describe('when called with the number of miliseconds', () => {
     let resolved;
