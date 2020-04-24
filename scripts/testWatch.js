@@ -9,7 +9,7 @@ function runTests() {
   clearTimeout(runDebounceId);
   runDebounceId = setTimeout(() => {
     process.stdout.write('\nRunning tests...');
-    const cmd = spawn('npm', ['run', 'test'], { stdio: 'inherit' });
+    const cmd = spawn('npm', ['run', 'test-no-coverage'], { stdio: 'inherit' });
     cmd.on('close', code => {
       process.stdout.write(`Test exited with ${code}`);
     });

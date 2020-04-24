@@ -6,9 +6,13 @@
     "lcov"
   ],
   "include": [
-    "lib/**/*.js",
-    "cli.js"
+    "packages/**/lib/*.js"
   ],
-  "check-coverage": false,
+  "exclude": [
+  ],
+  "require": [
+    "@babel/register"
+  ],
+  "check-coverage": true,
   "cache": false
 }

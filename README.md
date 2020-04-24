@@ -1,6 +1,6 @@
 # sprnz
 
-[![CircleCI](https://circleci.com/gh/asartalo/sprnz.svg?style=svg)](https://circleci.com/gh/asartalo/sprnz) [![Maintainability](https://api.codeclimate.com/v1/badges/bb1ae28e4ed716473570/maintainability)](https://codeclimate.com/github/asartalo/sprnz/maintainability)
+[![CircleCI](https://circleci.com/gh/asartalo/sprnz.svg?style=svg)](https://circleci.com/gh/asartalo/sprnz) [![Maintainability](https://api.codeclimate.com/v1/badges/bb1ae28e4ed716473570/maintainability)](https://codeclimate.com/github/asartalo/sprnz/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/bb1ae28e4ed716473570/test_coverage)](https://codeclimate.com/github/asartalo/sprnz/test_coverage)
 
 A collection of tools that use promises
 

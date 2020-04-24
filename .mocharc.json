@@ -1,4 +1,5 @@
 {
   "file": ["./support/mocha-setup.js"],
-  "watch-files": ["./packages/**/*.js"]
+  "watch-files": ["./packages/**/*.js"],
+  "require": ["@babel/register"]
 }
