@@ -47,7 +47,7 @@ module.exports = {
       },
     },
     {
-      files: ['packages/*/cjs/**/*.js'],
+      files: ['packages/*/cjs/**/*.js', 'packages/*/node_modules/**/*.js'],
       rules: {
         'no-void': 'off',
       },

@@ -1,0 +1,39 @@
+{
+  "name": "@sprnz/repeat-until",
+  "version": "1.0.0",
+  "description": "Repeat an action until a promise resolves",
+  "keywords": [
+    "setInterval",
+    "promise"
+  ],
+  "author": "Wayne Duran <asartalo@gmail.com>",
+  "homepage": "https://github.com/asartalo/sprnz/tree/master/packages/repeat-until#readme",
+  "license": "ISC",
+  "main": "./cjs/repeat-until.js",
+  "directories": {
+    "lib": "es",
+    "test": "__tests__"
+  },
+  "files": [
+    "es",
+    "cjs"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asartalo/sprnz.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/asartalo/sprnz/issues"
+  },
+  "type": "module",
+  "exports": {
+    "require": "./cjs/repeat-until.js",
+    "default": "./es/repeat-until.js"
+  }
+}
