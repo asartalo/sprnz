@@ -1,8 +1,8 @@
 const runCommand = require('./lib/runCommand.js');
 
 (async () => {
-  let result = await runCommand('npm', 'run', 'ls', 'bildDist');
-  if (result === 0) {
+  let result = await runCommand('npm', 'run', 'ls', 'buildDist');
+  if (result === 1) {
     return;
   }
 
@@ -13,7 +13,7 @@ const runCommand = require('./lib/runCommand.js');
     '-m',
     'chore(release): publish',
   );
-  if (result === 0) {
+  if (result === 1) {
     return;
   }
 

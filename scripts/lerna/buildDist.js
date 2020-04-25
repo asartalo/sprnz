@@ -16,7 +16,7 @@ async function buildDist(log) {
 
   info('Building scripts for distribution');
 
-  return iter.parallel(packages)(lernaPackage => {
+  return iter.parallel(packages)(async lernaPackage => {
     info(lernaPackage.location);
 
     const libPath = join(lernaPackage.location, 'lib');
@@ -25,7 +25,7 @@ async function buildDist(log) {
     const config = join(lernaPackage.rootPath, 'babel.config.json');
 
     try {
-      runCommand(
+      await runCommand(
         ...babelCommand({
           env: 'cjs',
           src: libPath,
@@ -33,7 +33,7 @@ async function buildDist(log) {
           config,
         }),
       );
-      runCommand(
+      await runCommand(
         ...babelCommand({
           env: 'es',
           src: libPath,
@@ -43,10 +43,13 @@ async function buildDist(log) {
       );
     } catch (e) {
       error(e);
+      return;
     }
 
     // Add package.json to cjs directory
-    const cjsPackageJson = editJsonFile(join(cjsPath, 'package.json'));
+    const filePath = join(cjsPath, 'package.json');
+    await runCommand('touch', filePath);
+    const cjsPackageJson = editJsonFile(filePath);
     cjsPackageJson.set('type', 'commonjs');
     cjsPackageJson.save();
   });
