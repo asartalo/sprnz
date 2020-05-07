@@ -39,8 +39,8 @@ node_modules/
 .next
 
 # Publish directories
-/packages/*/cjs
-/packages/*/es
+# /packages/*/cjs
+# /packages/*/es
 
 # others
 .DS_Store
