@@ -1,14 +1,18 @@
 {
   "env": {
     "cjs": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "modules": false,
+            "targets": { "node": "current" }
+          }
+        ]
+      ],
       "plugins": [
         "annotate-pure-calls",
-        [
-          "@babel/plugin-transform-modules-commonjs",
-          {
-            "strict": true
-          }
-        ],
+        ["@babel/plugin-transform-modules-commonjs"],
         "add-module-exports"
       ]
     },
