@@ -36,6 +36,26 @@ async function getPackages(packageName) {
   return { packages, errorMessage, mainName };
 }
 
+function setPackageDefaults(packageJsonFile, mainName) {
+  const scriptFile = `${mainName}.js`;
+  const items = {
+    type: 'module',
+    main: `./cjs/${scriptFile}`,
+    files: ['es', 'cjs'],
+    directories: {
+      lib: 'es',
+      test: '__tests__',
+    },
+    exports: {
+      require: `./cjs/${scriptFile}`,
+      default: `./es/${scriptFile}`,
+    },
+  };
+
+  Object.entries(items).forEach(([key, value]) => packageJsonFile.set(key, value));
+  packageJsonFile.save();
+}
+
 async function initializePackage(log) {
   const { info, error } = scopeLog(log, 'initializePackage');
   const packageName = Array.from(process.argv).pop();
@@ -53,24 +73,8 @@ async function initializePackage(log) {
   }
 
   const packageJsonFile = editJsonFile(thePackage.manifestLocation);
-  const scriptFile = `${mainName}.js`;
-  const items = {
-    type: 'module',
-    main: `./cjs/${scriptFile}`,
-    files: ['es', 'cjs'],
-    directories: {
-      lib: 'es',
-      test: '__tests__',
-    },
-    exports: {
-      require: `./cjs/${scriptFile}`,
-      default: `./es/${scriptFile}`,
-    },
-  };
-
   info(`Updating package.json file for ${packageName}`);
-  Object.entries(items).forEach(([key, value]) => packageJsonFile.set(key, value));
-  packageJsonFile.save();
+  setPackageDefaults(packageJsonFile, mainName);
 }
 
 module.exports = initializePackage;
