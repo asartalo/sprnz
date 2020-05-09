@@ -1,6 +1,6 @@
 {
   "name": "@sprnz/repeat-until",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Repeat an action until a promise resolves",
   "keywords": [
     "setInterval",
