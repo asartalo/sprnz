@@ -6,6 +6,7 @@
   "scripts": {
     "lint-watch": "esw --color -w --clear",
     "ls": "lerna-script",
+    "check-uncommitted": "test -z \"$(git status --porcelain)\" || (>&2 echo \"You have uncommitted changes\" && exit 1)",
     "create-package": "node ./scripts/createPackage.js",
     "lint": "eslint --fix ./packages/ ./scripts/ ./support/ ./*.js",
     "publish": "node ./scripts/publish.js",
@@ -31,7 +32,7 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "npm run lint && npm run test-no-coverage",
-      "pre-push": "npm run lint && npm run test-no-coverage"
+      "pre-push": "npm run check-uncommitted"
     }
   },
   "homepage": "https://github.com/asartalo/sprnz#readme",
